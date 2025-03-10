@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Componentes reutilizables */
+@layer components {
+  .card {
+    @apply bg-white p-8 rounded-lg shadow-md hover:-translate-y-2 transition-transform duration-300;
+  }
+  
+  .section-title {
+    @apply text-3xl font-bold text-center mb-10;
+  }
+  
+  .btn-primary {
+    @apply inline-block bg-primary hover:bg-primaryDark text-white font-semibold uppercase tracking-wide py-3 px-6 rounded shadow-lg hover:-translate-y-0.5 transition-all duration-300;
+  }
+}
+
+/* Aquí puedes agregar estilos personalizados adicionales si los necesitas en el futuro */ 

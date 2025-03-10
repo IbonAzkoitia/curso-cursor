@@ -1,0 +1,21 @@
+{
+  "name": "curso-cursor-landing",
+  "version": "1.0.0",
+  "description": "Landing page para el curso de Cursor",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "keywords": [
+    "cursor",
+    "curso",
+    "tailwind"
+  ],
+  "author": "Ibon Azkoitia",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5"
+  }
+} 

@@ -1,0 +1,33 @@
+---
+description: Guidelines for writing semantic, accessible HTML5 code.
+globs: *.html
+alwaysApply: false
+---
+# HTML5 Development Rules
+
+This rule applies to: *.html
+
+## Overview
+Guidelines for writing semantic, accessible HTML5 code.
+
+## HTML Best Practices
+- Use proper HTML5 semantic elements (header, nav, main, section, article, footer)
+- Ensure proper document structure with correct heading hierarchy
+- Include appropriate meta tags for SEO and viewport settings
+- Implement accessibility features (ARIA attributes, alt text, keyboard navigation)
+- Use descriptive class names that reflect component purpose
+- Avoid excessive nesting of elements
+- Ensure all interactive elements are keyboard accessible
+
+## Component Structure
+- Cards should use the `.card` component class
+- Section titles should use the `.section-title` component class
+- Primary buttons should use the `.btn-primary` component class
+- Implement responsive navigation with mobile menu toggle
+
+## Accessibility Requirements
+- All images must have appropriate alt text
+- Interactive elements must be keyboard accessible
+- Use ARIA attributes when necessary
+- Maintain proper heading hierarchy (h1-h6)
+- Ensure sufficient color contrast for text readability

@@ -1,0 +1,38 @@
+---
+description: Guidelines for writing clean, modern JavaScript code.
+globs: *.js, *.jsx, *.ts, *.tsx
+alwaysApply: false
+---
+# JavaScript Development Rules
+
+This rule applies to: *.js, *.jsx, *.ts, *.tsx
+
+## Overview
+Guidelines for writing clean, modern JavaScript code.
+
+## JavaScript Best Practices
+- Use modern ES6+ syntax (const/let, arrow functions, template literals)
+- Implement proper event handling with event delegation where appropriate
+- Ensure scripts are non-blocking (defer attribute or placed before closing body tag)
+- Use descriptive variable and function names
+- Implement proper error handling
+- Keep JavaScript unobtrusive - separate behavior from content and presentation
+- Use vanilla JavaScript when possible, avoiding unnecessary dependencies
+
+## Code Organization
+- Group related functionality into modules
+- Use clear, descriptive function and variable names
+- Comment complex logic or non-obvious code
+- Implement proper error handling with try/catch where appropriate
+
+## DOM Interaction
+- Use event delegation for multiple similar elements
+- Cache DOM selections when used multiple times
+- Avoid direct manipulation of style properties, prefer class toggling
+- Use dataset attributes for storing data on elements
+
+## Performance
+- Debounce or throttle event handlers for scroll, resize, etc.
+- Avoid memory leaks by properly removing event listeners
+- Minimize DOM reflows and repaints
+- Use requestAnimationFrame for animations

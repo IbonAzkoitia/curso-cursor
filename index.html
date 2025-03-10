@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curso de Cursor | Trinchera WP</title>
+  <!-- CSS optimizado de Tailwind -->
+  <link href="./dist/output.css" rel="stylesheet">
+  <!-- Fuentes de Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Preconexiones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Encabezado / Hero -->
+  <header class="relative min-h-screen flex flex-col items-center justify-center text-white bg-dark bg-opacity-90 bg-[url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center bg-blend-overlay" loading="lazy">
+    <nav class="fixed top-0 left-0 right-0 flex justify-between items-center px-8 py-6 bg-white bg-opacity-95 shadow-md z-50" aria-label="Navegación principal">
+      <div class="text-2xl font-bold text-primary">Trinchera WP</div>
+      
+      <!-- Botón de menú móvil (visible solo en móviles) -->
+      <button class="md:hidden text-dark hover:text-primary" id="menuToggle" aria-expanded="false" aria-controls="navMenu">
+        <i class="fas fa-bars text-xl"></i>
+        <span class="sr-only">Menú</span>
+      </button>
+      
+      <!-- Menú de navegación (oculto en móviles por defecto) -->
+      <ul class="hidden md:flex space-x-6" id="navMenu" role="menu">
+        <li><a href="#beneficios" class="font-medium text-dark hover:text-primary transition-colors">Beneficios</a></li>
+        <li><a href="#contenido" class="font-medium text-dark hover:text-primary transition-colors">Contenido</a></li>
+        <li><a href="#precio" class="font-medium text-dark hover:text-primary transition-colors">Precio</a></li>
+        <li><a href="#faq" class="font-medium text-dark hover:text-primary transition-colors">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="container mx-auto px-4 text-center mt-16 max-w-3xl">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Domina Cursor y potencia tu flujo de trabajo de desarrollo</h1>
+      <p class="text-xl mb-10 opacity-90">Aprende desde cero qué es Cursor y cómo integrarlo de forma efectiva en tus proyectos.</p>
+      <a href="#registro" class="btn-primary">Empezar Curso</a>
+    </div>
+  </header>
+
+  <!-- Sección de Introducción -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">¿Qué aprenderás en este curso?</h2>
+      <p class="text-lg max-w-3xl mx-auto text-center mb-12">
+        Cursor es una potente herramienta de asistencia en el desarrollo que te ayuda a <strong>optimizar tu tiempo</strong> y <strong>automatizar tareas repetitivas</strong>. En este curso, te enseñaré paso a paso cómo sacarle partido a todas sus funciones con ejemplos prácticos.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div class="card text-center">
+          <i class="fas fa-rocket text-4xl text-primary mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3">Desarrollo más rápido</h3>
+          <p>Aprende a utilizar la IA para acelerar tu flujo de trabajo.</p>
+        </div>
+        <div class="card text-center">
+          <i class="fas fa-code text-4xl text-primary mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3">Código de calidad</h3>
+          <p>Genera código limpio y bien estructurado con ayuda de Cursor.</p>
+        </div>
+        <div class="card text-center">
+          <i class="fas fa-lightbulb text-4xl text-primary mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3">Soluciones inteligentes</h3>
+          <p>Resuelve problemas complejos con sugerencias contextuales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Beneficios -->
+  <section id="beneficios" class="py-20 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Beneficios de usar Cursor</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <article class="card text-center">
+          <i class="fas fa-clock text-4xl text-primary mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3">Ahorro de tiempo</h3>
+          <p>Automatiza tareas repetitivas y enfócate en lo que realmente importa.</p>
+        </article>
+        <article class="card text-center">
+          <i class="fas fa-check-circle text-4xl text-primary mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3">Código de calidad</h3>
+          <p>Recibe sugerencias inteligentes y mejora la consistencia en tus proyectos.</p>
+        </article>
+        <article class="card text-center">
+          <i class="fas fa-plug text-4xl text-primary mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3">Fácil integración</h3>
+          <p>Compatible con las principales herramientas y flujos de trabajo de desarrollo.</p>
+        </article>
+        <article class="card text-center">
+          <i class="fas fa-brain text-4xl text-primary mb-4"></i>
+          <h3 class="text-xl font-semibold mb-3">Asistencia IA</h3>
+          <p>Aprovecha el poder de la inteligencia artificial para resolver problemas complejos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Contenido -->
+  <section id="contenido" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Contenido del Curso</h2>
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="flex items-center justify-center bg-primary text-white text-3xl font-bold md:w-20 p-4 md:p-0">1</div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3">Introducción a Cursor</h3>
+            <ul class="space-y-2">
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Historia y contexto</li>
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Instalación y primeros pasos</li>
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Casos de uso más frecuentes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="flex items-center justify-center bg-primary text-white text-3xl font-bold md:w-20 p-4 md:p-0">2</div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3">Configuración y Flujo de Trabajo</h3>
+            <ul class="space-y-2">
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Ajustes básicos y avanzados</li>
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Integración con diferentes entornos de desarrollo</li>
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Herramientas y extensiones recomendadas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="flex items-center justify-center bg-primary text-white text-3xl font-bold md:w-20 p-4 md:p-0">3</div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3">Ejemplo Práctico</h3>
+            <ul class="space-y-2">
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Crear un pequeño proyecto con Cursor</li>
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Prácticas recomendadas y optimización</li>
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Resolución de problemas comunes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden">
+          <div class="flex items-center justify-center bg-primary text-white text-3xl font-bold md:w-20 p-4 md:p-0">4</div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3">Consejos y Recursos Adicionales</h3>
+            <ul class="space-y-2">
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Repositorios y foros para continuar mejorando</li>
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Cómo mantener la eficiencia con cada actualización</li>
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Recursos complementarios</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Testimonios -->
+  <section class="py-20 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Lo que dicen nuestros alumnos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <div class="card relative">
+          <div class="italic text-lg mb-4 relative">
+            <span class="absolute -left-2 -top-2 text-6xl opacity-10 text-primary">"</span>
+            "Gracias al curso de Cursor, mi productividad dio un salto enorme. ¡Lo recomiendo!"
+          </div>
+          <div class="font-semibold text-gray-600">— María G., Desarrolladora Frontend</div>
+        </div>
+        <div class="card relative">
+          <div class="italic text-lg mb-4 relative">
+            <span class="absolute -left-2 -top-2 text-6xl opacity-10 text-primary">"</span>
+            "La parte práctica me ayudó a entender 100% las funcionalidades. Ahora desarrollo mucho más rápido."
+          </div>
+          <div class="font-semibold text-gray-600">— Carlos R., Programador Full Stack</div>
+        </div>
+        <div class="card relative">
+          <div class="italic text-lg mb-4 relative">
+            <span class="absolute -left-2 -top-2 text-6xl opacity-10 text-primary">"</span>
+            "Increíble cómo ha cambiado mi forma de trabajar. Cursor es ahora mi herramienta imprescindible."
+          </div>
+          <div class="font-semibold text-gray-600">— Laura M., Ingeniera de Software</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Precio -->
+  <section id="precio" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Planes de Acceso</h2>
+      <div class="flex flex-wrap justify-center gap-8 mt-12">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-xl flex flex-col max-w-sm w-full">
+          <div class="bg-dark text-white p-8 text-center">
+            <h3 class="text-xl font-semibold mb-2">Plan Básico</h3>
+            <p class="text-4xl font-bold">49€</p>
+          </div>
+          <div class="p-8 flex-grow">
+            <ul class="space-y-4">
+              <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Acceso a todos los módulos</li>
+              <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Recursos descargables</li>
+              <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Soporte por email</li>
+              <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Acceso de por vida</li>
+              <li class="flex items-center text-gray-500"><i class="fas fa-times text-red-500 mr-2"></i> Sesiones en vivo</li>
+              <li class="flex items-center text-gray-500"><i class="fas fa-times text-red-500 mr-2"></i> Asesoría personalizada</li>
+            </ul>
+          </div>
+          <div class="p-6 bg-gray-50 text-center">
+            <a href="#registro" class="btn-primary w-full">Inscribirme</a>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-3 hover:shadow-xl flex flex-col max-w-sm w-full transform scale-105 border-2 border-primary relative">
+          <span class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Recomendado</span>
+          <div class="bg-dark text-white p-8 text-center">
+            <h3 class="text-xl font-semibold mb-2">Plan Premium</h3>
+            <p class="text-4xl font-bold">99€</p>
+          </div>
+          <div class="p-8 flex-grow">
+            <ul class="space-y-4">
+              <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Acceso a todos los módulos</li>
+              <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Recursos descargables</li>
+              <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Soporte prioritario</li>
+              <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Acceso de por vida</li>
+              <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 2 Sesiones en vivo</li>
+              <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Asesoría personalizada</li>
+            </ul>
+          </div>
+          <div class="p-6 bg-gray-50 text-center">
+            <a href="#registro" class="btn-primary w-full">Inscribirme</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de FAQ -->
+  <section id="faq" class="py-20 bg-light">
+    <div class="container mx-auto px-4">
+      <h2 class="section-title">Preguntas Frecuentes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-5xl mx-auto">
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-3 text-primary">¿Necesito conocimientos previos de programación?</h3>
+          <p>Se recomienda tener conocimientos básicos de programación, pero no es imprescindible. El curso está diseñado para que puedas seguirlo paso a paso.</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-3 text-primary">¿Se incluye certificado?</h3>
+          <p>Sí, al completar todos los módulos recibirás un certificado de finalización que podrás compartir en tu perfil profesional.</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-3 text-primary">¿Cuánto tiempo tendré acceso al curso?</h3>
+          <p>Tendrás acceso inmediato y de por vida a todo el contenido del curso, incluyendo futuras actualizaciones.</p>
+        </div>
+        <div class="card">
+          <h3 class="text-xl font-semibold mb-3 text-primary">¿Puedo solicitar un reembolso?</h3>
+          <p>Durante los primeros 15 días puedes solicitar un reembolso si consideras que el contenido no cumple con tus expectativas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Registro / CTA Final -->
+  <section id="registro" class="py-20 bg-dark text-white text-center">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6">¿Listo para revolucionar tu forma de programar?</h2>
+      <p class="text-xl max-w-2xl mx-auto mb-8">No pierdas más tiempo con tareas repetitivas. Empieza hoy mismo con Cursor y transforma tu flujo de trabajo.</p>
+      <a href="#" class="btn-primary px-8">Acceder al Curso</a>
+      <p class="mt-8 text-sm text-white/80"><i class="fas fa-shield-alt mr-2"></i> Garantía de satisfacción de 15 días</p>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="bg-[#1a252f] text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div>
+          <div class="text-2xl font-bold text-primary mb-4">Trinchera WP</div>
+          <p class="text-white/70">Cursos de desarrollo web y emprendimiento que necesitas para mejorar como profesional.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Enlaces</h4>
+          <ul class="space-y-3">
+            <li><a href="https://trincherawp.com/cursos" class="text-white/70 hover:text-white transition-colors">Cursos</a></li>
+            <li><a href="https://trincherawp.com/precio" class="text-white/70 hover:text-white transition-colors">Precio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-6">Legal</h4>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors">Términos de servicio</a></li>
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors">Política de privacidad</a></li>
+            <li><a href="#" class="text-white/70 hover:text-white transition-colors">Política de cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/10 text-center text-white/70 text-sm">
+        <p>© 2025 Trinchera WP. Todos los derechos reservados.</p>
+        <p class="mt-2">Creado por <a href="#" class="text-primary">Ibon Azkoitia</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('hidden');
+      document.getElementById('navMenu').classList.toggle('flex');
+      document.getElementById('navMenu').classList.toggle('flex-col');
+      document.getElementById('navMenu').classList.toggle('absolute');
+      document.getElementById('navMenu').classList.toggle('top-20');
+      document.getElementById('navMenu').classList.toggle('left-0');
+      document.getElementById('navMenu').classList.toggle('right-0');
+      document.getElementById('navMenu').classList.toggle('bg-white');
+      document.getElementById('navMenu').classList.toggle('p-4');
+      document.getElementById('navMenu').classList.toggle('shadow-md');
+    });
+  </script>
+</body>
+</html> 

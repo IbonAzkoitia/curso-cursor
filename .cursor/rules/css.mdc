@@ -1,0 +1,60 @@
+---
+description: These rules guide the AI when working with CSS, particularly Tailwind CSS in this project.
+globs: *.css, *.html, tailwind.config.js, src/input.css
+alwaysApply: false
+---
+# CSS and Tailwind CSS Development Rules
+
+This rule applies to: *.css, *.scss, *.html, tailwind.config.js
+
+## Overview
+These rules guide the AI when working with CSS, particularly Tailwind CSS in this project.
+
+## Project Structure
+- `src/input.css`: Contains Tailwind directives and custom component definitions
+- `dist/output.css`: Contains the compiled CSS output
+- `tailwind.config.js`: Contains Tailwind configuration including custom colors and theme extensions
+
+## Custom Components
+The project uses the following custom component classes defined in `src/input.css`:
+
+@src/input.css
+
+## Color Palette
+The project uses a custom color palette defined in `tailwind.config.js`:
+
+@tailwind.config.js
+
+## CSS Guidelines
+
+### General Principles
+- Follow utility-first CSS methodology with Tailwind
+- Use custom components for repeated patterns
+- Maintain responsive design across all device sizes
+- Optimize for performance
+
+### Tailwind Best Practices
+- Use Tailwind's utility classes whenever possible
+- Group related utilities with meaningful class order (layout → typography → visual styles)
+- Use responsive prefixes (sm:, md:, lg:, xl:) consistently
+- Leverage the custom components (.card, .section-title, .btn-primary) for consistency
+- Use Tailwind's spacing scale for consistent spacing
+- Use the custom color system defined in the config
+
+### Component Usage
+- Cards should use the `.card` component class
+- Section titles should use the `.section-title` component class
+- Primary buttons should use the `.btn-primary` component class
+
+### Responsive Design
+- Follow mobile-first approach
+- Use standard breakpoints:
+  - Default: Mobile (< 768px)
+  - md: Tablet (≥ 768px)
+  - lg: Desktop (≥ 1024px)
+  - xl: Large Desktop (≥ 1280px)
+
+### Performance Considerations
+- Minimize use of custom CSS outside of Tailwind when possible
+- Use @apply sparingly and only for well-defined components
+- Remember that the build process will purge unused styles
