@@ -60,13 +60,15 @@
 <body class="text-gray-800 bg-gray-50">
   <!-- Encabezado / Hero -->
   <header class="relative min-h-screen flex flex-col items-center justify-center text-white bg-dark bg-opacity-90 bg-[url('src/images/curso-cursor-background.webp')] bg-cover bg-center bg-blend-overlay">
-    <!-- Imagen de fondo -->
+    <!-- Imagen de fondo con dimensiones explícitas -->
     <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       <picture>
         <source srcset="src/images/curso-cursor-background.webp" type="image/webp">
         <img 
           src="src/images/curso-cursor-background.jpeg" 
           alt="Fondo de código de programación" 
+          width="1920" 
+          height="1080"
           class="object-cover object-center w-full h-full opacity-90 mix-blend-overlay"
         >
       </picture>
