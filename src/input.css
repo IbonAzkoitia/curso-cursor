@@ -5,11 +5,11 @@
 /* Componentes reutilizables */
 @layer components {
   .card {
-    @apply bg-white p-8 rounded-lg shadow-md hover:-translate-y-2 transition-transform duration-300;
+    @apply p-8 transition-transform duration-300 bg-white rounded-lg shadow-md hover:-translate-y-2 text-balance;
   }
   
   .section-title {
-    @apply text-3xl font-bold text-center mb-10;
+    @apply mb-10 text-3xl font-bold text-center;
   }
   
   .btn-primary {
