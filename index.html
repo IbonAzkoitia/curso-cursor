@@ -19,7 +19,10 @@
   <!-- Encabezado / Hero -->
   <header class="relative min-h-screen flex flex-col items-center justify-center text-white bg-dark bg-opacity-90 bg-[url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center bg-blend-overlay" loading="lazy">
     <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 bg-white shadow-md bg-opacity-95" aria-label="Navegación principal">
-      <div class="text-2xl font-bold text-primary">Trinchera WP</div>
+      <div class="text-2xl font-bold text-primary">
+        Trinchera WP
+        <span class="px-2 py-1 ml-2 text-xs font-semibold text-gray-700 bg-gray-200 rounded-md" id="localBadge" style="display: none;">LOCAL</span>
+      </div>
       
       <!-- Botón de menú móvil (visible solo en móviles) -->
       <button class="md:hidden text-dark hover:text-primary" id="menuToggle" aria-expanded="false" aria-controls="navMenu">
@@ -31,7 +34,7 @@
       <ul class="hidden space-x-6 md:flex" id="navMenu" role="menu">
         <li><a href="#beneficios" class="font-medium transition-colors text-dark hover:text-primary">Beneficios</a></li>
         <li><a href="#contenido" class="font-medium transition-colors text-dark hover:text-primary">Contenido</a></li>
-        <li><a href="#precio" class="font-medium transition-colors text-dark hover:text-primary">Precio</a></li>
+        <li><a href="#precio" class="font-medium transition-colors text-dark hover:text-primary">Acceso</a></li>
         <li><a href="#faq" class="font-medium transition-colors text-dark hover:text-primary">FAQ</a></li>
       </ul>
     </nav>
@@ -46,24 +49,25 @@
   <section class="py-20 bg-white">
     <div class="container px-4 mx-auto">
       <h2 class="section-title">¿Qué aprenderás en este curso?</h2>
-      <p class="max-w-3xl mx-auto mb-12 text-lg text-center">
+      <p class="max-w-3xl mx-auto mb-12 text-lg text-center text-balance">
         Cursor es una potente herramienta de asistencia en el desarrollo que te ayuda a <strong>optimizar tu tiempo</strong> y <strong>automatizar tareas repetitivas</strong>. En este curso, te enseñaré paso a paso cómo sacarle partido a todas sus funciones con ejemplos prácticos.
       </p>
       
-      <div class="grid grid-cols-1 gap-8 mt-12 md:grid-cols-3">
+      <!-- Añadimos un ancho máximo y reducimos el espacio entre las tarjetas -->
+      <div class="grid max-w-5xl grid-cols-1 gap-4 mx-auto mt-12 md:grid-cols-3">
         <div class="text-center card">
           <i class="mb-4 text-4xl fas fa-rocket text-primary"></i>
-          <h3 class="mb-3 text-xl font-semibold">Desarrollo más rápido</h3>
+          <h3 class="mb-2 text-xl font-semibold">Desarrollo más rápido</h3>
           <p>Aprende a utilizar la IA para acelerar tu flujo de trabajo.</p>
         </div>
         <div class="text-center card">
           <i class="mb-4 text-4xl fas fa-code text-primary"></i>
-          <h3 class="mb-3 text-xl font-semibold">Código de calidad</h3>
+          <h3 class="mb-2 text-xl font-semibold">Código de calidad</h3>
           <p>Genera código limpio y bien estructurado con ayuda de Cursor.</p>
         </div>
         <div class="text-center card">
           <i class="mb-4 text-4xl fas fa-lightbulb text-primary"></i>
-          <h3 class="mb-3 text-xl font-semibold">Soluciones inteligentes</h3>
+          <h3 class="mb-2 text-xl font-semibold">Soluciones inteligentes</h3>
           <p>Resuelve problemas complejos con sugerencias contextuales.</p>
         </div>
       </div>
@@ -74,25 +78,25 @@
   <section id="beneficios" class="py-20 bg-light">
     <div class="container px-4 mx-auto">
       <h2 class="section-title">Beneficios de usar Cursor</h2>
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div class="grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-4">
         <article class="text-center card">
           <i class="mb-4 text-4xl fas fa-clock text-primary"></i>
-          <h3 class="mb-3 text-xl font-semibold">Ahorro de tiempo</h3>
+          <h3 class="mb-2 text-xl font-semibold">Ahorro de tiempo</h3>
           <p>Automatiza tareas repetitivas y enfócate en lo que realmente importa.</p>
         </article>
         <article class="text-center card">
           <i class="mb-4 text-4xl fas fa-check-circle text-primary"></i>
-          <h3 class="mb-3 text-xl font-semibold">Código de calidad</h3>
+          <h3 class="mb-2 text-xl font-semibold">Código de calidad</h3>
           <p>Recibe sugerencias inteligentes y mejora la consistencia en tus proyectos.</p>
         </article>
         <article class="text-center card">
           <i class="mb-4 text-4xl fas fa-plug text-primary"></i>
-          <h3 class="mb-3 text-xl font-semibold">Fácil integración</h3>
+          <h3 class="mb-2 text-xl font-semibold">Fácil integración</h3>
           <p>Compatible con las principales herramientas y flujos de trabajo de desarrollo.</p>
         </article>
         <article class="text-center card">
           <i class="mb-4 text-4xl fas fa-brain text-primary"></i>
-          <h3 class="mb-3 text-xl font-semibold">Asistencia IA</h3>
+          <h3 class="mb-2 text-xl font-semibold">Asistencia IA</h3>
           <p>Aprovecha el poder de la inteligencia artificial para resolver problemas complejos.</p>
         </article>
       </div>
@@ -182,108 +186,97 @@
     </div>
   </section>
 
-  <!-- Sección de Precio -->
+  <!-- Sección de Precio (modificada para curso gratuito) -->
   <section id="precio" class="py-20 bg-white">
     <div class="container px-4 mx-auto">
-      <h2 class="section-title">Planes de Acceso</h2>
-      <div class="flex flex-wrap justify-center gap-8 mt-12">
-        <div class="flex flex-col w-full max-w-sm overflow-hidden transition-all duration-300 bg-white rounded-lg shadow-md hover:-translate-y-3 hover:shadow-xl">
-          <div class="p-8 text-center text-white bg-dark">
-            <h3 class="mb-2 text-xl font-semibold">Plan Básico</h3>
-            <p class="text-4xl font-bold">49€</p>
+      <h2 class="section-title">Acceso al Curso</h2>
+      <div class="max-w-lg mx-auto text-center">
+        <div class="p-8 mb-8 bg-white rounded-lg shadow-lg">
+          <div class="inline-block p-3 mb-6 text-white rounded-full bg-primary">
+            <i class="text-3xl fas fa-gift"></i>
           </div>
-          <div class="flex-grow p-8">
-            <ul class="space-y-4">
+          <h3 class="mb-4 text-2xl font-bold">Curso 100% Gratuito</h3>
+          <p class="mb-6 text-lg text-balance">
+            Aprende a utilizar Cursor sin ningún costo. Este curso completo está disponible para toda la comunidad de Trinchera WP.
+          </p>
+          
+          <div class="p-5 mb-6 rounded-lg bg-gray-50">
+            <h4 class="mb-4 text-xl font-semibold">El curso incluye:</h4>
+            <ul class="max-w-xs mx-auto space-y-3 text-left">
               <li class="flex items-center"><i class="mr-2 text-green-500 fas fa-check"></i> Acceso a todos los módulos</li>
               <li class="flex items-center"><i class="mr-2 text-green-500 fas fa-check"></i> Recursos descargables</li>
-              <li class="flex items-center"><i class="mr-2 text-green-500 fas fa-check"></i> Soporte por email</li>
+              <li class="flex items-center"><i class="mr-2 text-green-500 fas fa-check"></i> Ejemplos prácticos</li>
               <li class="flex items-center"><i class="mr-2 text-green-500 fas fa-check"></i> Acceso de por vida</li>
-              <li class="flex items-center text-gray-500"><i class="mr-2 text-red-500 fas fa-times"></i> Sesiones en vivo</li>
-              <li class="flex items-center text-gray-500"><i class="mr-2 text-red-500 fas fa-times"></i> Asesoría personalizada</li>
             </ul>
           </div>
-          <div class="p-6 text-center bg-gray-50">
-            <a href="#registro" class="w-full btn-primary">Inscribirme</a>
-          </div>
+          
+          <a href="#registro" class="inline-block px-8 py-4 text-lg btn-primary">Acceder Ahora</a>
         </div>
         
-        <div class="relative flex flex-col w-full max-w-sm overflow-hidden transition-all duration-300 transform scale-105 bg-white border-2 rounded-lg shadow-md hover:-translate-y-3 hover:shadow-xl border-primary">
-          <span class="absolute top-0 right-0 px-3 py-1 text-xs font-bold text-white rounded-bl-lg bg-primary">Recomendado</span>
-          <div class="p-8 text-center text-white bg-dark">
-            <h3 class="mb-2 text-xl font-semibold">Plan Premium</h3>
-            <p class="text-4xl font-bold">99€</p>
-          </div>
-          <div class="flex-grow p-8">
-            <ul class="space-y-4">
-              <li class="flex items-center"><i class="mr-2 text-green-500 fas fa-check"></i> Acceso a todos los módulos</li>
-              <li class="flex items-center"><i class="mr-2 text-green-500 fas fa-check"></i> Recursos descargables</li>
-              <li class="flex items-center"><i class="mr-2 text-green-500 fas fa-check"></i> Soporte prioritario</li>
-              <li class="flex items-center"><i class="mr-2 text-green-500 fas fa-check"></i> Acceso de por vida</li>
-              <li class="flex items-center"><i class="mr-2 text-green-500 fas fa-check"></i> 2 Sesiones en vivo</li>
-              <li class="flex items-center"><i class="mr-2 text-green-500 fas fa-check"></i> Asesoría personalizada</li>
-            </ul>
-          </div>
-          <div class="p-6 text-center bg-gray-50">
-            <a href="#registro" class="w-full btn-primary">Inscribirme</a>
-          </div>
-        </div>
+        <p class="text-gray-600 text-balance">
+          <i class="mr-2 fas fa-info-circle"></i> 
+          Este curso es parte de nuestra iniciativa para apoyar a la comunidad de desarrolladores.
+          No se requiere tarjeta de crédito ni información de pago.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Sección de FAQ -->
+  <!-- Sección de FAQ (actualizada) -->
   <section id="faq" class="py-20 bg-light">
     <div class="container px-4 mx-auto">
       <h2 class="section-title">Preguntas Frecuentes</h2>
       <div class="grid max-w-5xl grid-cols-1 gap-8 mx-auto mt-12 md:grid-cols-2">
         <div class="card">
-          <h3 class="mb-3 text-xl font-semibold text-primary">¿Necesito conocimientos previos de programación?</h3>
-          <p>Se recomienda tener conocimientos básicos de programación, pero no es imprescindible. El curso está diseñado para que puedas seguirlo paso a paso.</p>
+          <h3 class="mb-3 text-xl font-semibold text-primary">¿Realmente es gratis?</h3>
+          <p>Sí, el curso es completamente gratuito. No hay costos ocultos ni necesidad de introducir información de pago.</p>
         </div>
         <div class="card">
-          <h3 class="mb-3 text-xl font-semibold text-primary">¿Se incluye certificado?</h3>
-          <p>Sí, al completar todos los módulos recibirás un certificado de finalización que podrás compartir en tu perfil profesional.</p>
+          <h3 class="mb-3 text-xl font-semibold text-primary">¿Necesito conocimientos previos de programación?</h3>
+          <p>Se recomienda tener conocimientos básicos de programación, pero no es imprescindible. El curso está diseñado para que puedas seguirlo paso a paso.</p>
         </div>
         <div class="card">
           <h3 class="mb-3 text-xl font-semibold text-primary">¿Cuánto tiempo tendré acceso al curso?</h3>
           <p>Tendrás acceso inmediato y de por vida a todo el contenido del curso, incluyendo futuras actualizaciones.</p>
         </div>
         <div class="card">
-          <h3 class="mb-3 text-xl font-semibold text-primary">¿Puedo solicitar un reembolso?</h3>
-          <p>Durante los primeros 15 días puedes solicitar un reembolso si consideras que el contenido no cumple con tus expectativas.</p>
+          <h3 class="mb-3 text-xl font-semibold text-primary">¿Cómo puedo apoyar este proyecto?</h3>
+          <p>La mejor forma de apoyarnos es compartiendo el curso con otros desarrolladores y siguiéndonos en nuestras redes sociales.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sección de Registro / CTA Final -->
+  <!-- Sección de Registro / CTA Final (actualizada) -->
   <section id="registro" class="py-20 text-center text-white bg-dark">
     <div class="container px-4 mx-auto">
       <h2 class="mb-6 text-3xl font-bold">¿Listo para revolucionar tu forma de programar?</h2>
-      <p class="max-w-2xl mx-auto mb-8 text-xl">No pierdas más tiempo con tareas repetitivas. Empieza hoy mismo con Cursor y transforma tu flujo de trabajo.</p>
-      <a href="#" class="px-8 btn-primary">Acceder al Curso</a>
-      <p class="mt-8 text-sm text-white/80"><i class="mr-2 fas fa-shield-alt"></i> Garantía de satisfacción de 15 días</p>
+      <p class="max-w-2xl mx-auto mb-8 text-xl">No pierdas más tiempo con tareas repetitivas. Empieza hoy mismo con Cursor y transforma tu flujo de trabajo, completamente gratis.</p>
+      <a href="#" class="px-8 btn-primary">Acceder al Curso Gratuito</a>
+      <p class="mt-8 text-sm text-white/80">
+        <i class="mr-2 fas fa-users"></i> Únete a nuestra comunidad de desarrolladores en Trinchera WP
+      </p>
     </div>
   </section>
 
   <!-- Pie de página -->
   <footer class="bg-[#1a252f] text-white py-16">
-    <div class="container px-4 mx-auto">
-      <div class="grid grid-cols-1 gap-8 mb-12 md:grid-cols-3">
+    <div class="container max-w-5xl px-4 mx-auto">
+      <div class="grid grid-cols-1 gap-4 mb-12 md:grid-cols-3">
         <div>
-          <div class="mb-4 text-2xl font-bold text-primary">Trinchera WP</div>
+          <div class="mb-4 text-2xl font-bold text-white">Trinchera WP</div>
           <p class="text-white/70">Cursos de desarrollo web y emprendimiento que necesitas para mejorar como profesional.</p>
         </div>
         <div>
-          <h4 class="mb-6 text-lg font-semibold">Enlaces</h4>
-          <ul class="space-y-3">
+          <h4 class="mb-4 text-lg font-semibold">Enlaces</h4>
+          <ul class="space-y-2">
             <li><a href="https://trincherawp.com/cursos" class="transition-colors text-white/70 hover:text-white">Cursos</a></li>
             <li><a href="https://trincherawp.com/precio" class="transition-colors text-white/70 hover:text-white">Precio</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="mb-6 text-lg font-semibold">Legal</h4>
-          <ul class="space-y-3">
+          <h4 class="mb-4 text-lg font-semibold">Legal</h4>
+          <ul class="space-y-2">
             <li><a href="#" class="transition-colors text-white/70 hover:text-white">Términos de servicio</a></li>
             <li><a href="#" class="transition-colors text-white/70 hover:text-white">Política de privacidad</a></li>
             <li><a href="#" class="transition-colors text-white/70 hover:text-white">Política de cookies</a></li>
@@ -292,7 +285,7 @@
       </div>
       <div class="pt-8 text-sm text-center border-t border-white/10 text-white/70">
         <p>© 2025 Trinchera WP. Todos los derechos reservados.</p>
-        <p class="mt-2">Creado por <a href="#" class="text-primary">Ibon Azkoitia</a></p>
+        <p class="mt-2">Creado por <a href="#" class="underline text-white/70 hover:text-white">Ibon Azkoitia</a></p>
       </div>
     </div>
   </footer>
@@ -310,6 +303,14 @@
       document.getElementById('navMenu').classList.toggle('p-4');
       document.getElementById('navMenu').classList.toggle('shadow-md');
     });
+
+    // Check if we're in a local environment and show the badge accordingly
+    (function() {
+      const hostname = window.location.hostname;
+      if (hostname !== 'cursor.trincherawp.com') {
+        document.getElementById('localBadge').style.display = 'inline-flex';
+      }
+    })();
   </script>
 </body>
 </html> 
