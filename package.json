@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Landing page para el curso de Cursor",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
-    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --minify",
+    "watch": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch"
   },
   "keywords": [
     "cursor",

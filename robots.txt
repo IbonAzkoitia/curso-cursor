@@ -1,0 +1,7 @@
+# robots.txt para cursor.trincherawp.com
+User-agent: *
+Allow: /
+Disallow: /politica-privacidad.html
+
+# Sitemap (si decides crear uno en el futuro)
+# Sitemap: https://cursor.trincherawp.com/sitemap.xml

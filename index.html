@@ -3,7 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Meta etiquetas básicas SEO -->
+  <meta name="description" content="Aprende a usar Cursor, la herramienta de IA para desarrolladores que potencia tu productividad. Curso gratuito con ejemplos prácticos para optimizar tu flujo de trabajo de desarrollo." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Trinchera WP" />
+  <meta name="keywords" content="cursor, desarrollo web, IA para programadores, herramientas de desarrollo, curso gratuito, productividad en programación" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://cursor.trincherawp.com/" />
+  
+  <!-- Open Graph para Facebook, LinkedIn, etc. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cursor.trincherawp.com/" />
+  <meta property="og:title" content="Curso de Cursor | Aprende a potenciar tu desarrollo con IA" />
+  <meta property="og:description" content="Curso gratuito para aprender a usar Cursor, la herramienta de IA que revoluciona el flujo de trabajo de los desarrolladores." />
+  <meta property="og:image" content="https://cursor.trincherawp.com/img/og-cursor-course.jpg" />
+  <meta property="og:site_name" content="Trinchera WP" />
+  <meta property="og:locale" content="es_ES" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://cursor.trincherawp.com/" />
+  <meta name="twitter:title" content="Curso de Cursor | Trinchera WP" />
+  <meta name="twitter:description" content="Aprende a usar Cursor, la herramienta de IA para desarrolladores. Curso gratuito con ejemplos prácticos." />
+  <meta name="twitter:image" content="https://cursor.trincherawp.com/img/twitter-cursor-course.jpg" />
+  
+  <!-- Etiquetas para control de caché y rendimiento -->
+  <meta http-equiv="Cache-Control" content="max-age=86400" />
+  
+  <!-- Título de la página -->
   <title>Curso de Cursor | Trinchera WP</title>
+  
   <!-- CSS optimizado de Tailwind -->
   <link href="./dist/output.css" rel="stylesheet">
   <!-- Fuentes de Google -->
@@ -16,7 +47,10 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <!-- Alpine.js CDN -->
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="icon" href="src/favicon/favicon.ico" />
+  <link rel="manifest" href="/site.webmanifest">
 </head>
+
 <body class="text-gray-800 bg-gray-50">
   <!-- Encabezado / Hero -->
   <header class="relative min-h-screen flex flex-col items-center justify-center text-white bg-dark bg-opacity-90 bg-[url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center bg-blend-overlay" loading="lazy">
@@ -154,7 +188,7 @@
               >
             </div>
             <div class="ml-3 text-sm">
-              <label for="rgpd" class="font-medium text-gray-700">Acepto la <a href="politica-privacidad.html" class="text-primary hover:underline" target="_blank">política de privacidad</a> *</label>
+              <label for="rgpd" class="font-medium text-gray-700">Acepto la <a href="politica-privacidad.html" class="text-primary hover:underline" target="_blank" rel="nofollow">política de privacidad</a> *</label>
             </div>
           </div>
           
@@ -291,9 +325,15 @@
           <div class="p-6">
             <h3 class="mb-3 text-xl font-semibold">Consejos y Recursos Adicionales</h3>
             <ul class="space-y-2">
-              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Repositorios y foros para continuar mejorando</li>
-              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Cómo mantener la eficiencia con cada actualización</li>
-              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">Recursos complementarios</li>
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">
+                <a href="https://cursor.sh/docs" target="_blank" rel="noopener">Documentación oficial de Cursor</a>
+              </li>
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">
+                <a href="https://github.com/getcursor/cursor" target="_blank" rel="noopener">Repositorio de GitHub</a>
+              </li>
+              <li class="pl-6 relative before:content-['•'] before:absolute before:left-0 before:text-primary">
+                <a href="https://trincherawp.com/cursos" rel="dofollow">Otros cursos de Trinchera WP</a>
+              </li>
             </ul>
           </div>
         </div>
