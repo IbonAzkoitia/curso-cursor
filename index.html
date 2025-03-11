@@ -42,9 +42,6 @@
   <!-- Cargar CSS con media queries para no bloquear -->
   <link href="./dist/output.css" rel="stylesheet" media="print" onload="this.media='all'">
 
-  <!-- Optimizar carga de fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-
   <!-- Font Awesome para iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
   <!-- Preconexiones -->
@@ -55,13 +52,20 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link rel="icon" href="src/favicon/favicon.ico" />
   <link rel="manifest" href="/site.webmanifest">
+  <!-- Añadir en el <head> antes de los enlaces a las fuentes -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v22/pxiByp8kv8JHgFVrLDD4Z1xlFQ.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v22/pxiEyp8kv8JHgFVrJJfecg.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Optimizar carga de fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
 </head>
 
 <body class="text-gray-800 bg-gray-50">
   <!-- Encabezado / Hero -->
-  <header class="relative min-h-screen flex flex-col items-center justify-center text-white bg-dark bg-opacity-90 bg-[url('src/images/curso-cursor-background.webp')] bg-cover bg-center bg-blend-overlay">
+  <header class="relative flex flex-col items-center justify-center min-h-screen text-white bg-dark bg-opacity-90" style="background-image: url('src/images/curso-cursor-background.webp'); background-size: cover; background-position: center; background-blend-mode: overlay; min-height: 100vh;">
     <!-- Imagen de fondo con dimensiones explícitas -->
-    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+    <!-- <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       <picture>
         <source srcset="src/images/curso-cursor-background.webp" type="image/webp">
         <img 
@@ -72,7 +76,7 @@
           class="object-cover object-center w-full h-full opacity-90 mix-blend-overlay"
         >
       </picture>
-    </div>
+    </div> -->
     
     <!-- Navegación -->
     <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 bg-white shadow-md bg-opacity-95" aria-label="Navegación principal">
@@ -97,7 +101,7 @@
     </nav>
     
     <!-- Contenido del header -->
-    <div class="container relative z-10 max-w-3xl px-4 mx-auto mt-16 text-center">
+    <div class="container relative z-10 max-w-3xl px-4 mx-auto mt-16 text-center" style="min-height: 200px;">
       <h1 class="mb-6 text-4xl font-bold leading-tight select-text md:text-5xl">Domina Cursor y potencia tu flujo de trabajo de desarrollo</h1>
       <p class="mb-10 text-xl select-text opacity-90 text-balance">Aprende desde cero qué es Cursor y cómo integrarlo de forma efectiva en tus proyectos.</p>
       <button class="relative z-10 cursor-pointer btn-primary" data-open-modal>Empezar Curso</button>
