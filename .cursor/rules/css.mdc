@@ -1,8 +1,9 @@
 ---
 description: These rules guide the AI when working with CSS, particularly Tailwind CSS in this project.
-globs: *.css, *.html, tailwind.config.js, src/input.css
+globs: *.css, *.scss, *.html, tailwind.config.js
 alwaysApply: false
 ---
+
 # CSS and Tailwind CSS Development Rules
 
 This rule applies to: *.css, *.scss, *.html, tailwind.config.js
