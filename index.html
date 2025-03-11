@@ -14,6 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <!-- Alpine.js CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="text-gray-800 bg-gray-50">
   <!-- Encabezado / Hero -->
@@ -41,9 +43,152 @@
     <div class="container max-w-3xl px-4 mx-auto mt-16 text-center">
       <h1 class="mb-6 text-4xl font-bold leading-tight md:text-5xl">Domina Cursor y potencia tu flujo de trabajo de desarrollo</h1>
       <p class="mb-10 text-xl opacity-90 text-balance">Aprende desde cero qué es Cursor y cómo integrarlo de forma efectiva en tus proyectos.</p>
-      <a href="#registro" class="btn-primary">Empezar Curso</a>
+      <button class="btn-primary" data-open-modal>Empezar Curso</button>
     </div>
   </header>
+
+  <!-- Modal de Registro -->
+  <div 
+    x-data="{ 
+      open: false, 
+      submitted: false,
+      email: '',
+      rgpd: false,
+      loading: false,
+      error: '',
+      submitForm() {
+        if (!this.email || !this.rgpd) {
+          this.error = 'Por favor, completa todos los campos requeridos.';
+          return;
+        }
+        this.loading = true;
+        this.error = '';
+        
+        // Datos que se enviarían al webhook
+        const formData = {
+          email: this.email,
+          acceptedTerms: this.rgpd,
+          source: 'curso-cursor'
+        };
+        
+        // Mostrar los datos en la consola para pruebas
+        console.log('Datos del formulario que se enviarían a Make.com:', formData);
+        
+        // Simulamos un tiempo de carga para ver el estado de loading
+        setTimeout(() => {
+          // Simulamos una respuesta exitosa
+          console.log('Formulario enviado con éxito (simulación)');
+          this.submitted = true;
+          this.loading = false;
+        }, 1500);
+        
+        /* 
+        // Código original comentado para cuando tengas el webhook
+        fetch('https://hook.eu1.make.com/your-webhook-url', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: this.email,
+            acceptedTerms: this.rgpd,
+            source: 'curso-cursor'
+          })
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Error en el envío');
+          }
+          this.submitted = true;
+          this.loading = false;
+        })
+        .catch(err => {
+          this.error = 'Hubo un error al procesar tu solicitud. Por favor, inténtalo de nuevo.';
+          this.loading = false;
+          console.error(err);
+        });
+        */
+      }
+    }" 
+    x-show="open"
+    @open-modal.window="open = true"
+    x-transition.opacity
+    @keydown.escape.window="open = false"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" 
+    style="display: none;">
+    
+    <!-- Contenido del Modal -->
+    <div @click.outside="open = false" class="relative w-full max-w-md p-6 mx-4 bg-white rounded-lg shadow-xl">
+      <!-- Botón de cierre -->
+      <button @click="open = false" class="absolute text-gray-500 top-4 right-4 hover:text-gray-700">
+        <i class="fas fa-times"></i>
+        <span class="sr-only">Cerrar</span>
+      </button>
+      
+      <!-- Formulario de registro -->
+      <div x-show="!submitted">
+        <h3 class="mb-4 text-2xl font-bold text-primary">Accede al curso gratuito</h3>
+        <p class="mb-6 text-gray-600">Completa el formulario para obtener acceso inmediato a todo el contenido del curso.</p>
+        
+        <form @submit.prevent="submitForm()" class="space-y-4">
+          <div>
+            <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Email *</label>
+            <input 
+              type="email" 
+              id="email" 
+              x-model="email" 
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary" 
+              placeholder="tu@email.com" 
+              required
+            >
+          </div>
+          
+          <div class="flex items-start">
+            <div class="flex items-center h-5">
+              <input 
+                id="rgpd" 
+                type="checkbox" 
+                x-model="rgpd" 
+                class="w-4 h-4 border-gray-300 rounded text-primary focus:ring-primary" 
+                required
+              >
+            </div>
+            <div class="ml-3 text-sm">
+              <label for="rgpd" class="font-medium text-gray-700">Acepto la <a href="politica-privacidad.html" class="text-primary hover:underline" target="_blank">política de privacidad</a> *</label>
+            </div>
+          </div>
+          
+          <!-- Mensaje de error -->
+          <div x-show="error" class="p-3 text-sm text-red-700 bg-red-100 rounded-md" x-text="error"></div>
+          
+          <button 
+            type="submit" 
+            class="w-full btn-primary"
+            :disabled="loading"
+          >
+            <span x-show="!loading">Acceder al Curso</span>
+            <span x-show="loading" class="flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Procesando...
+            </span>
+          </button>
+        </form>
+      </div>
+      
+      <!-- Mensaje de confirmación -->
+      <div x-show="submitted" class="text-center">
+        <div class="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full">
+          <i class="text-2xl text-green-500 fas fa-check"></i>
+        </div>
+        <h3 class="mb-4 text-2xl font-bold text-primary">¡Registro completado!</h3>
+        <p class="mb-6 text-gray-600 text-balance">Hemos enviado un correo electrónico con los detalles de acceso al curso. Revisa tu bandeja de entrada.</p>
+        <button @click="open = false" class="w-full btn-primary">Cerrar</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Sección de Introducción -->
   <section class="py-20 bg-white">
@@ -210,7 +355,7 @@
             </ul>
           </div>
           
-          <a href="#registro" class="inline-block px-8 py-4 text-lg btn-primary">Acceder Ahora</a>
+          <button class="inline-block px-8 py-4 text-lg btn-primary" data-open-modal>Acceder Ahora</button>
         </div>
         
         <p class="text-gray-600 text-balance">
@@ -252,7 +397,7 @@
     <div class="container px-4 mx-auto">
       <h2 class="mb-6 text-3xl font-bold">¿Listo para revolucionar tu forma de programar?</h2>
       <p class="max-w-2xl mx-auto mb-8 text-xl">No pierdas más tiempo con tareas repetitivas. Empieza hoy mismo con Cursor y transforma tu flujo de trabajo, completamente gratis.</p>
-      <a href="#" class="px-8 btn-primary">Acceder al Curso Gratuito</a>
+      <button class="px-8 btn-primary" data-open-modal>Acceder al Curso Gratuito</button>
       <p class="mt-8 text-sm text-white/80">
         <i class="mr-2 fas fa-users"></i> Únete a nuestra comunidad de desarrolladores en Trinchera WP
       </p>
@@ -311,6 +456,16 @@
         document.getElementById('localBadge').style.display = 'inline-flex';
       }
     })();
+    
+    // Eliminamos todo el código Alpine.js anterior y lo simplificamos
+    document.addEventListener('DOMContentLoaded', function() {
+      // Añadimos event listeners a todos los botones que abren el modal
+      document.querySelectorAll('[data-open-modal]').forEach(button => {
+        button.addEventListener('click', function() {
+          window.dispatchEvent(new CustomEvent('open-modal'));
+        });
+      });
+    });
   </script>
 </body>
 </html> 
