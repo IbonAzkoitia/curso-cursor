@@ -64,19 +64,6 @@
 <body class="text-gray-800 bg-gray-50">
   <!-- Encabezado / Hero -->
   <header class="relative flex flex-col items-center justify-center min-h-screen text-white bg-dark bg-opacity-90" style="background-image: url('src/images/curso-cursor-background.webp'); background-size: cover; background-position: center; background-blend-mode: overlay; min-height: 100vh;">
-    <!-- Imagen de fondo con dimensiones explícitas -->
-    <!-- <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-      <picture>
-        <source srcset="src/images/curso-cursor-background.webp" type="image/webp">
-        <img 
-          src="src/images/curso-cursor-background.jpeg" 
-          alt="Fondo de código de programación" 
-          width="1920" 
-          height="1080"
-          class="object-cover object-center w-full h-full opacity-90 mix-blend-overlay"
-        >
-      </picture>
-    </div> -->
     
     <!-- Navegación -->
     <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 bg-white shadow-md bg-opacity-95" aria-label="Navegación principal">
@@ -92,13 +79,23 @@
       </button>
       
       <!-- Menú de navegación (oculto en móviles por defecto) -->
-      <ul class="hidden space-x-6 md:flex" id="navMenu" role="menu">
+      <ul class="hidden space-x-6 md:flex" id="navMenu">
         <li><a href="#beneficios" class="font-medium transition-colors text-dark hover:text-primary">Beneficios</a></li>
         <li><a href="#contenido" class="font-medium transition-colors text-dark hover:text-primary">Contenido</a></li>
         <li><a href="#precio" class="font-medium transition-colors text-dark hover:text-primary">Acceso</a></li>
         <li><a href="#faq" class="font-medium transition-colors text-dark hover:text-primary">FAQ</a></li>
       </ul>
     </nav>
+    
+    <!-- Menú móvil -->
+    <div class="md:hidden" id="mobileMenu" style="display: none;">
+      <ul class="flex flex-col p-4 space-y-4 bg-white shadow-md">
+        <li><a href="#beneficios" class="font-medium transition-colors text-dark hover:text-primary">Beneficios</a></li>
+        <li><a href="#contenido" class="font-medium transition-colors text-dark hover:text-primary">Contenido</a></li>
+        <li><a href="#precio" class="font-medium transition-colors text-dark hover:text-primary">Acceso</a></li>
+        <li><a href="#faq" class="font-medium transition-colors text-dark hover:text-primary">FAQ</a></li>
+      </ul>
+    </div>
     
     <!-- Contenido del header -->
     <div class="container relative z-10 max-w-3xl px-4 mx-auto mt-16 text-center" style="min-height: 200px;">
@@ -480,14 +477,14 @@
           <p class="text-white/70">Cursos de desarrollo web y emprendimiento que necesitas para mejorar como profesional.</p>
         </div>
         <div>
-          <h4 class="mb-4 text-lg font-semibold">Enlaces</h4>
+          <strong class="block mb-4 text-lg font-semibold">Enlaces</strong>
           <ul class="space-y-2">
             <li><a href="https://trincherawp.com/cursos" class="transition-colors text-white/70 hover:text-white">Cursos</a></li>
             <li><a href="https://trincherawp.com/precio" class="transition-colors text-white/70 hover:text-white">Precio</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="mb-4 text-lg font-semibold">Legal</h4>
+          <strong class="block mb-4 text-lg font-semibold">Legal</strong>
           <ul class="space-y-2">
             <li><a href="#" class="transition-colors text-white/70 hover:text-white">Términos de servicio</a></li>
             <li><a href="#" class="transition-colors text-white/70 hover:text-white">Política de privacidad</a></li>
