@@ -35,12 +35,18 @@
   <!-- Título de la página -->
   <title>Curso de Cursor | Trinchera WP</title>
   
-  <!-- CSS optimizado de Tailwind -->
-  <link href="./dist/output.css" rel="stylesheet">
-  <!-- Fuentes de Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Precargar recursos críticos -->
+  <link rel="preload" href="./dist/output.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="font" crossorigin>
+
+  <!-- Cargar CSS con media queries para no bloquear -->
+  <link href="./dist/output.css" rel="stylesheet" media="print" onload="this.media='all'">
+
+  <!-- Optimizar carga de fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
   <!-- Font Awesome para iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
   <!-- Preconexiones -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +59,20 @@
 
 <body class="text-gray-800 bg-gray-50">
   <!-- Encabezado / Hero -->
-  <header class="relative min-h-screen flex flex-col items-center justify-center text-white bg-dark bg-opacity-90 bg-[url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center bg-blend-overlay" loading="lazy">
+  <header class="relative min-h-screen flex flex-col items-center justify-center text-white bg-dark bg-opacity-90 bg-[url('src/images/curso-cursor-background.webp')] bg-cover bg-center bg-blend-overlay">
+    <!-- Imagen de fondo -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <picture>
+        <source srcset="src/images/curso-cursor-background.webp" type="image/webp">
+        <img 
+          src="src/images/curso-cursor-background.jpeg" 
+          alt="Fondo de código de programación" 
+          class="object-cover object-center w-full h-full opacity-90 mix-blend-overlay"
+        >
+      </picture>
+    </div>
+    
+    <!-- Navegación -->
     <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-6 bg-white shadow-md bg-opacity-95" aria-label="Navegación principal">
       <div class="text-2xl font-bold text-primary">
         Trinchera WP
@@ -74,10 +93,12 @@
         <li><a href="#faq" class="font-medium transition-colors text-dark hover:text-primary">FAQ</a></li>
       </ul>
     </nav>
-    <div class="container max-w-3xl px-4 mx-auto mt-16 text-center">
-      <h1 class="mb-6 text-4xl font-bold leading-tight md:text-5xl">Domina Cursor y potencia tu flujo de trabajo de desarrollo</h1>
-      <p class="mb-10 text-xl opacity-90 text-balance">Aprende desde cero qué es Cursor y cómo integrarlo de forma efectiva en tus proyectos.</p>
-      <button class="btn-primary" data-open-modal>Empezar Curso</button>
+    
+    <!-- Contenido del header -->
+    <div class="container relative z-10 max-w-3xl px-4 mx-auto mt-16 text-center">
+      <h1 class="mb-6 text-4xl font-bold leading-tight select-text md:text-5xl">Domina Cursor y potencia tu flujo de trabajo de desarrollo</h1>
+      <p class="mb-10 text-xl select-text opacity-90 text-balance">Aprende desde cero qué es Cursor y cómo integrarlo de forma efectiva en tus proyectos.</p>
+      <button class="relative z-10 cursor-pointer btn-primary" data-open-modal>Empezar Curso</button>
     </div>
   </header>
 
